@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 function useCurrencyInfo(currency){
     const [data, setData] =useState({}) // passing empty object so that if no value is passed still the project will not crash as we can traverse the obj with the help of a loop
      useEffect(()=>{
-        fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/
-            currency-api@2024-03-06/v1/currencies/${currency}.json`)
+        fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/{currrency}.json`)
             .then((res)=>res.json())
             .then((res)=>setData(res[currency]))
             console.log(data)
@@ -13,3 +12,4 @@ function useCurrencyInfo(currency){
       return data
     }
     export default useCurrencyInfo;
+    
